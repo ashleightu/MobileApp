@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingUI.Views.HomePage"
+             Title="HomePage">
+    <VerticalStackLayout>
+        <Image Source="logopng.png"
+               HeightRequest="110"
+               WidthRequest="250"
+               VerticalOptions="Start"/>
+
+        <Grid x:Name="PackagesGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            
+        <Label Grid.Column="0" Text="Packages"
+               FontAttributes="Bold"/>
+            <Image Source="rigtharrowicon.png" />
+        </Grid>
+        
+        <CarouselView ItemsSource="{Binding Items}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Image Source="{Binding Picture}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                                <Label Text="{Binding Price}"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Quantity}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <CarouselView ItemsSource="{Binding Advertisements}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Image Source="{Binding AdImage}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding AdName}"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+    </VerticalStackLayout>
+</ContentPage>

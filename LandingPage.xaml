@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingUI.LandingPage"
+             Title="LandingPage">
+    <VerticalStackLayout>
+
+        <Image Source="logopng.png"
+               HeightRequest="110"
+               WidthRequest="250"
+               VerticalOptions="Start"/>
+
+        <Image Source="landingpage1.png"
+               HeightRequest="400"
+               WidthRequest="350"
+               VerticalOptions="StartAndExpand"/>
+        <Label 
+            Text="EXPLORE SIBU!"
+            FontSize="30"
+            Margin="10,20,10,-5"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="Get the best Sibu travel packages that are sure to satisfy your wanderlust."
+            FontSize="15"
+            VerticalOptions="Start"
+            HorizontalOptions="Center" 
+            Margin="30,20"/>
+
+        <Button x:Name="start" Text="Let's get started"
+                TextColor="Black"
+                FontSize="17"
+                Command="{Binding StartCommand}"
+                Padding="13"
+                HorizontalOptions="Center" 
+                BackgroundColor="#FBB23F"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
